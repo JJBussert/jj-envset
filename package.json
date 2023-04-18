@@ -1,6 +1,6 @@
 {
   "name": "jj-envset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Execute a command with a specific environment variable from an env file",
   "main": "src/index.js",
   "type": "module",
