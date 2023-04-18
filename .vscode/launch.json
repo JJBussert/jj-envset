@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug jj-envset",
+        "program": "${workspaceFolder}/src/index.js",
+        "args": ["HELLO_WORLD", "echo Hello World!", "--envFile", ".env"]
+      }
+    ]
+  }
+  

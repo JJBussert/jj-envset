@@ -1,0 +1,42 @@
+{
+  "name": "jj-envset",
+  "version": "1.0.0",
+  "description": "Execute a command with a specific environment variable from an env file",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "jj-envset": "./src/index.js"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/jj-envset.git"
+  },
+  "keywords": [
+    "env",
+    "set",
+    "cli",
+    "dotenv",
+    "yargs",
+    "vitest"
+  ],
+  "author": "JJ Bussert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/jj-envset/issues"
+  },
+  "homepage": "https://github.com/JJBussert/jj-envset#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "yargs": "^17.3.1"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "vite": "^4.2.2",
+    "vitest": "^0.30.1"
+  }
+}
