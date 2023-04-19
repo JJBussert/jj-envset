@@ -2,7 +2,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { envset } from './envset.js';
 
-function main() {
+//function main() {
   yargs(hideBin(process.argv))
     .command(
       '$0 <targetKey> <command>',
@@ -29,9 +29,9 @@ function main() {
       }
     )
     .help().argv;
-}
+//}
 
-// Call the main function only when the module is executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main();
-}
+// // Call the main function only when the module is executed directly
+// if (import.meta.url === `file://${process.argv[1]}`) {
+//   main();
+// }

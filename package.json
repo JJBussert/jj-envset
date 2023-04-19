@@ -2,13 +2,14 @@
   "name": "jj-envset",
   "version": "1.0.1",
   "description": "Execute a command with a specific environment variable from an env file",
-  "main": "src/index.js",
+  "main": "src/envset.js",
   "type": "module",
   "bin": {
-    "jj-envset": "./src/index.js"
+    "jj-envset": "./src/cli.js"
   },
   "scripts": {
     "test": "vitest",
+    "test-cli": "jj-envset --env .env.test --key TEST_KEY --command \"echo $TEST_KEY\"",
     "start": "node src/index.js"
   },
   "repository": {
@@ -26,7 +27,7 @@
   "author": "JJ Bussert",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/jj-envset/issues"
+    "url": "https://github.com/JJBussert/jj-envset/issues"
   },
   "homepage": "https://github.com/JJBussert/jj-envset#readme",
   "dependencies": {

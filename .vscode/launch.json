@@ -5,7 +5,7 @@
         "type": "node",
         "request": "launch",
         "name": "Debug jj-envset",
-        "program": "${workspaceFolder}/src/index.js",
+        "program": "${workspaceFolder}/src/cli.js",
         "args": ["HELLO_WORLD", "echo Hello World!", "--envFile", ".env"]
       }
     ]
