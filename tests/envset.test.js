@@ -1,7 +1,6 @@
-import { assert, expect, test } from 'vitest';
+import { expect, test } from 'vitest';
 import { envset } from '../src/envset.js';
 import fs from 'fs';
-import os from 'os';
 import { execSync } from 'child_process';
 
 test('envset: should save the output of the command to the specified key in the env file', async () => {

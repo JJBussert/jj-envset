@@ -1,11 +1,11 @@
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+// index.js
+
 import fs from 'fs';
 import dotenv from 'dotenv';
 import os from 'os';
 import { execSync } from 'child_process';
 
-export function envset(targetKey, command, envFile) {
+function envset(targetKey, command, envFile) {
     // Execute the command and get its standard output
     const commandOutput = execSync(command).toString().trim();
 
@@ -39,3 +39,13 @@ export function envset(targetKey, command, envFile) {
         .join(os.EOL);
     fs.writeFileSync(envFile, env);
 }
+
+
+  const isMainModule = import.meta.url === new URL(import.meta.url).pathname;
+  
+  if (isMainModule) {
+    envset();
+  }
+  
+  export { envset };
+  
