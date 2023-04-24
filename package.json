@@ -21,7 +21,6 @@
   },
   "keywords": [
     "env",
-    "set",
     "cli",
     "dotenv",
     "yargs",
