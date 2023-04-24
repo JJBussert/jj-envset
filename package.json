@@ -1,6 +1,6 @@
 {
   "name": "jj-envset",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Execute a command with a specific environment variable from an env file",
   "type": "module",
   "main": "/src/envset.js",
@@ -8,7 +8,7 @@
     "test": "vitest --run && npm run test-cli-abc && npm run test-cli-xyz && npm run test-cleanup",
     "test-cli-abc": "node ./src/cli.cjs abc \"echo xyz\" -e .env.test",
     "test-cli-xyz": "node ./src/cli.cjs xyz \"echo abc\" -e .env.test",
-    "test-cleanup" : "rimraf .env.test",
+    "test-cleanup": "rimraf .env.test",
     "test-units": "vitest",
     "start": "node src/envset.js"
   },
