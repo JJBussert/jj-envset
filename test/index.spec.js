@@ -1,7 +1,6 @@
 import { expect, test } from 'vitest';
-import { envset } from '../src/envset.js';
+import { envset } from '../src/index.js';
 import fs from 'fs';
-import { execSync } from 'child_process';
 
 test('envset: should save the key/value pair to the env file', async () => {
   const key = 'HELLO_WORLD';
@@ -14,7 +13,7 @@ test('envset: should save the key/value pair to the env file', async () => {
   }
 
   // Call the envset function
-  envset(key, value, envFile);
+  envset(key, value, false, envFile);
 
   // Read the updated env file
   const envContent = fs.readFileSync(envFile, 'utf-8');
@@ -36,7 +35,7 @@ test('envset: should update an existing env file with new value', async () => {
   fs.writeFileSync(envFile, 'INITIAL_KEY="Initial Value"\n');
 
   // Call the envset function to update the env file with new content
-  envset(key, value, envFile);
+  envset(key, value, false, envFile);
 
   // Read the updated env file
   const envContent = fs.readFileSync(envFile, 'utf-8');
@@ -58,7 +57,7 @@ test('envset: should update an quote existing values if they were not', async ()
   fs.writeFileSync(envFile, 'INITIAL_KEY=Initial Value\n');
 
   // Call the envset function to update the env file with new content
-  envset(key, value, envFile);
+  envset(key, value, false, envFile);
 
   // Read the updated env file
   const envContent = fs.readFileSync(envFile, 'utf-8');

@@ -1,10 +1,8 @@
-// index.js
-
 import fs from 'fs';
 import dotenv from 'dotenv';
 import os from 'os';
 
-function envset(key, value, envFile) {
+function envset(key, value, verbose, envFile) {
 
     // Check if the .env file exists
     const envFileExists = fs.existsSync(envFile);
@@ -19,14 +17,17 @@ function envset(key, value, envFile) {
         dotenvObj = {};
     }
 
-    // Update or create the key-value pair in the dotenvObj
-    if (dotenvObj.hasOwnProperty(key)) {
-        // If the key already exists, update the value
-        console.log(`Updating ${key} in .env file`);
-    } else {
-        // If the key does not exist, add it to the environment
-        console.log(`Adding ${key} to .env file`);
+    if (verbose) {
+        // Update or create the key-value pair in the dotenvObj
+        if (dotenvObj.hasOwnProperty(key)) {
+            // If the key already exists, update the value
+            console.log(`Updating ${key} in .env file`);
+        } else {
+            // If the key does not exist, add it to the environment
+            console.log(`Adding ${key} to .env file`);
+        }
     }
+    
 
     dotenvObj[key] = value;
 
@@ -38,11 +39,4 @@ function envset(key, value, envFile) {
 }
 
 
-  const isMainModule = import.meta.url === new URL(import.meta.url).pathname;
-  
-  if (isMainModule) {
-    envset();
-  }
-  
-  export { envset };
-  
+export { envset };

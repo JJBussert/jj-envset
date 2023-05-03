@@ -5,15 +5,17 @@
   "type": "module",
   "main": "/src/envset.js",
   "scripts": {
-    "test": "vitest --run && npm run test-cli-abc && npm run test-cli-xyz && npm run test-cleanup",
-    "test-cli-abc": "node ./src/cli.cjs abc \"echo xyz\" -e .env.test",
-    "test-cli-xyz": "node ./src/cli.cjs xyz \"echo abc\" -e .env.test",
+    "test": "vitest",
+    "test-cli": "npm link . && npm run test-cli-abc && npm run test-cli-xyz && npm run test-cleanup && npm unlink .",
+    "test-cli-abc": "jj-envset abc abcvalue -e .env.test",
+    "test-cli-xyz": "jj-envset xyz xyzvalue -e .env.test",
     "test-cleanup": "rimraf .env.test",
-    "test-units": "vitest",
-    "start": "node src/envset.js"
+    "release-patch": "npm version patch && git push --follow-tags && npm publish",
+    "release-minor": "npm version minor && git push --follow-tags && npm publish",
+    "release-major": "npm version major && git push --follow-tags && npm publish"
   },
   "bin": {
-    "jj-envset": "./src/cli.cjs"
+    "jj-envset": "./cli.js"
   },
   "repository": {
     "type": "git",
